@@ -1,24 +1,14 @@
 package com.gzeinnumer.viewmodellivedataexample;
 
-import androidx.arch.core.util.Function;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
 public class MainVM extends ViewModel {
     public MainVM() {
     }
 
+    //https://developer.android.com/topic/libraries/architecture/livedata?hl=id#:~:text=Ringkasan%20LiveData%20Bagian%20dari%20Android,aktivitas%2C%20fragmen%2C%20atau%20layanan.
     private final MutableLiveData<String> _str = new MutableLiveData<>();
-
-
-    public LiveData<String> getStr = Transformations.switchMap(_str, new Function<String, LiveData<String>>() {
-        @Override
-        public LiveData<String> apply(String input) {
-            return _str;
-        }
-    });
 
     public MutableLiveData<String> getStr() {
         return _str;
