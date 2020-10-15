@@ -10,14 +10,16 @@ implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
 - Make Class `MainVM`.
 ```java
 public class MainVM extends ViewModel {
-    public MainVM() {
-    }
 
     private final MutableLiveData<String> _str = new MutableLiveData<>();
+    
+    public MainVM() {
+    }
 
     public MutableLiveData<String> getStr() {
         return _str;
     }
+    
     public void setStr(String str) {
         _str.setValue(str);
     }
